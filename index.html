@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ear">
 <head>
-    <title></title>
+    <title>EAR</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <script type="text/javascript" src="js/load.js"></script>
 </head>
 <body>
+    <div class="content">
+        <div ng-controller="RootCtrl">
+            <button ng-click="load()">LOAD</button>
+            <ul class="testList">
+                <li ng-class="{selected: selectedTest == name}" ng-repeat="(name, test) in tests" ng-click="selectTest(name)">{{name}}</li>
+            </ul>
 
+            <ul class="noteList">
+                <li ng-repeat="question in test.questions">
+                    <span ng-repeat="note in question.notes"> {{note.id}} </span>
+                </li>
+            </ul>
+
+            <!--<div ui-view="viewKeyboard">-->
+                <!--test-->
+            <!--</div>-->
+        </div>
+
+    </div>
+    <script type="text/ng-template" id="/keyboard.html">
+        <ul ng-controller="KeyboardCtrl" class="keyboard">
+            <li ng-repeat="key in keys" ng-click="push(key.id)">нота: {{key.note}} октавы: {{key.octave}} </li>
+        </ul>
+    </script>
 </body>
 </html>

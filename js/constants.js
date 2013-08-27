@@ -1,7 +1,23 @@
-/**
- * Created with JetBrains WebStorm.
- * User: jangot
- * Date: 26.08.13
- * Time: 17:05
- * To change this template use File | Settings | File Templates.
- */
+var constants = {
+    NOTE : {
+        C : 'C',
+        Cd : 'Cd',
+        D : 'D',
+        Dd : 'Dd',
+        E : 'E',
+        F : 'F',
+        Fd : 'Fd',
+        G : 'G',
+        Gd : 'Gd',
+        A : 'A',
+        Ad : 'Ad',
+        B : 'B'
+    },
+    OCTAVE : {
+        1 : 1,
+        2 : 2,
+        3 : 3,
+        4 : 4,
+        5 : 5
+    }
+}

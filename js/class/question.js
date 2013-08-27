@@ -1,7 +1,16 @@
-/**
- * Created with JetBrains WebStorm.
- * User: jangot
- * Date: 26.08.13
- * Time: 19:00
- * To change this template use File | Settings | File Templates.
- */
+function Question(notes) {
+    if (!notes) {
+        throw Error('There are notes.');
+    }
+    this.notes = notes;
+    this.answerNotes = [];
+}
+
+Question.prototype = {
+    notes : null,
+    answerNotes : null,
+
+    setAnswerNote : function(n, note) {
+        this.answerNotes[n] = note;
+    }
+}

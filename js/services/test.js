@@ -2,8 +2,8 @@
 
 /* Services */
 
-angular.module('testsService', [])
-    .factory('Tests', function(){
+angular.module('testService', [])
+    .factory('Test', function(){
         return {
             questions : [],
             currentQuestion : null,
@@ -18,7 +18,13 @@ angular.module('testsService', [])
                 }
             },
 
-            clean : function() {
+            answer : function(note) {
+                var question = this.questions[this.currentQuestion];
+                var nextNote = question.answerNotes.length;
+                question.setAnswerNote(nextNote, note);
+            },
+
+            clear : function() {
                 this.questions = [];
                 this.currentQuestion = null;
             },

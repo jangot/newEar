@@ -1,7 +1,13 @@
-/**
- * Created with JetBrains WebStorm.
- * User: jangot
- * Date: 26.08.13
- * Time: 16:56
- * To change this template use File | Settings | File Templates.
- */
+"use strict";
+
+function KeyboardCtrl($scope, $log, Keys, Test) {
+
+    $scope.keys = Keys.all();
+
+    $scope.push = function(key) {
+        $log.log(key);
+    }
+
+}
+
+//KeyboardCtrl.$inject = ['$scope', '$log', 'Keys'];
