@@ -11,7 +11,7 @@ angular.module('keysService', [])
                     angular.forEach(constants.NOTE, function(j, note){
                         keys.push(
                             {
-                                id : octave + '|' + note,
+                                id : octave + constants.NOTE_SEPARATOR + note,
                                 note : note,
                                 octave : octave
                             }

@@ -1,11 +1,11 @@
 "use strict";
 
-function KeyboardCtrl($scope, $log, Keys, Test) {
+function KeyboardCtrl($scope, $log, Keys, Test, Player) {
 
     $scope.keys = Keys.all();
 
     $scope.push = function(key) {
-        $log.log(key);
+        Player.play(key);
     }
 
 }

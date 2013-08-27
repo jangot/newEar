@@ -3,6 +3,7 @@
 angular
     .module('ear', [
         'ui.state',
+        'PlayerFactory',
         'keysService',
         'testService',
         'questionService'
