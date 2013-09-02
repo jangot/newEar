@@ -13,8 +13,8 @@ Player.prototype = {
         var self = this;
         this.sounds = {};
         $(function(){
-            $('body').append('<div id="playerContainer"></div>');
-            self.container = $('#playerContainer');
+            self.container = $('<div style="display: none;"></div>');
+            $('body').append(self.container);
 
             for (var octaveName in constants.OCTAVE) {
                 for (var noteName in constants.NOTE) {

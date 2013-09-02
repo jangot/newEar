@@ -18,3 +18,4 @@ sc('services/question');
 
 sc('controllers/index');
 sc('controllers/keyboard');
+sc('controllers/test');

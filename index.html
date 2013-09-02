@@ -15,7 +15,7 @@
             </ul>
 
             <ul class="noteList">
-                <li ng-repeat="question in test.questions">
+                <li ng-repeat="question in test.questions" ng-class="{selected : $index == test.currentQuestion}">
                     <span ng-repeat="note in question.notes"> {{note.id}} </span>
                 </li>
             </ul>
@@ -24,11 +24,21 @@
                 test
             </div>
         </div>
-
+        <div ng-controller="TestCtrl">
+            <button ng-click="prevQuestion()">Prev</button>
+            <button ng-click="playQuestion()">Play</button>
+            <button ng-click="nextQuestion()">Next</button>
+        </div>
     </div>
     <script type="text/ng-template" id="/keyboard.html">
         <ul ng-controller="KeyboardCtrl" class="keyboard">
-            <li ng-repeat="key in keys" ng-click="push(key.id)">нота: {{key.note}} октавы: {{key.octave}} </li>
+            <!--ng-class="{selected : currentQuestion}"-->
+            <li
+                    ng-repeat="key in keys"
+                    ng-click="push(key.id)"
+                    >
+                нота: {{key.note}} октавы: {{key.octave}}
+            </li>
         </ul>
     </script>
 </body>

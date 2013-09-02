@@ -6,8 +6,9 @@ function KeyboardCtrl($scope, $log, Keys, Test, Player) {
 
     $scope.push = function(key) {
         Player.play(key);
+        if (Test.isRun()) {
+            Test.answer(key);
+        }
     }
 
 }
-
-//KeyboardCtrl.$inject = ['$scope', '$log', 'Keys'];

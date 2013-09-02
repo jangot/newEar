@@ -12,11 +12,6 @@ angular.module('testService', [])
                     this.questions.push(question);
                 }
             },
-            setCurrentQuestion : function(number) {
-                if (this.questions[number]) {
-                    this.currentQuestion = number;
-                }
-            },
 
             answer : function(note) {
                 var question = this.questions[this.currentQuestion];
@@ -27,6 +22,10 @@ angular.module('testService', [])
             clear : function() {
                 this.questions = [];
                 this.currentQuestion = null;
+            },
+
+            isRun : function() {
+                return this.currentQuestion !== null;
             },
 
             _isInterface : function(question) {

@@ -12,5 +12,11 @@ Question.prototype = {
 
     setAnswerNote : function(n, note) {
         this.answerNotes[n] = note;
+    },
+
+    play : function(player) {
+        for (var i in this.notes) {
+            player.play(this.notes[i].id);
+        }
     }
 }
