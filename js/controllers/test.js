@@ -2,6 +2,8 @@
 
 function TestCtrl($scope, Test, Player) {
 
+    $scope.correct = null;
+
     $scope.playQuestion = function() {
         if(Test.isRun()) {
             var n = Test.currentQuestion;
@@ -17,6 +19,8 @@ function TestCtrl($scope, Test, Player) {
 
         if (Test.questions[n]) {
             Test.currentQuestion = n;
+            var firstNote = Test.questions[n].notes[0];
+            Test.answer(firstNote.id);
         }
     }
 
@@ -33,5 +37,11 @@ function TestCtrl($scope, Test, Player) {
         }
         Test.currentQuestion = n;
     }
+
+    $scope.check = function() {
+        var n = Test.currentQuestion;
+        Test.questions[n].check();
+    }
+
 
 };

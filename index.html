@@ -17,6 +17,11 @@
             <ul class="noteList">
                 <li ng-repeat="question in test.questions" ng-class="{selected : $index == test.currentQuestion}">
                     <span ng-repeat="note in question.notes"> {{note.id}} </span>
+                    <strong ng-switch="question.correct">
+                        <b ng-switch-when="true">OK</b>
+                        <b ng-switch-when="false">FAIL</b>
+                        <b ng-switch-default>not checked</b>
+                    </strong>
                 </li>
             </ul>
 
@@ -28,6 +33,10 @@
             <button ng-click="prevQuestion()">Prev</button>
             <button ng-click="playQuestion()">Play</button>
             <button ng-click="nextQuestion()">Next</button>
+            <button ng-click="check()">Check</button>
+        </div>
+        <div>
+            {{test.currentQuestion.answerNotes}}
         </div>
     </div>
     <script type="text/ng-template" id="/keyboard.html">
@@ -36,8 +45,9 @@
             <li
                     ng-repeat="key in keys"
                     ng-click="push(key.id)"
+                    ng-class="{selected: test.questions[test.currentQuestion].answerNotes.indexOf(key.id) > -1}"
                     >
-                нота: {{key.note}} октавы: {{key.octave}}
+                <!--нота: {{key.note}} октавы: {{key.octave}}-->
             </li>
         </ul>
     </script>

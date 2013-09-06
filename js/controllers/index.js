@@ -22,7 +22,7 @@ function RootCtrl($scope, $http, Test, Question, Keys) {
 
         var notes = Keys.all();
         for (var i = 0; i < $scope.tests[name].length; i++) {
-            $scope.test.addQuestion(Question.create($scope.tests[name][i], notes));;
+            $scope.test.addQuestion(Question.create($scope.tests[name][i], notes));
 
         }
     }

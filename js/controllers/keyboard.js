@@ -2,6 +2,7 @@
 
 function KeyboardCtrl($scope, $log, Keys, Test, Player) {
 
+    $scope.test = Test;
     $scope.keys = Keys.all();
 
     $scope.push = function(key) {
